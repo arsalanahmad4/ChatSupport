@@ -1,5 +1,6 @@
 package com.example.chatsupport.ui.login
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.chatsupport.data.LoginDataSource
@@ -9,9 +10,8 @@ import com.example.chatsupport.data.LoginRepository
  * ViewModel provider factory to instantiate LoginViewModel.
  * Required given LoginViewModel has a non-empty constructor
  */
-class LoginViewModelFactory : ViewModelProvider.Factory {
-
-    @Suppress("UNCHECKED_CAST")
+class LoginViewModelFactory :
+    ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             return LoginViewModel(
